@@ -4,34 +4,47 @@ library(dplyr)
 #library(RJSONIO)
 library(rjson)
 #library(plyr)
-library()
+# 
+# checkin_file <- ('yelp_academic_dataset_checkin.json')
+# checkin_data<-jsonlite::stream_in(textConnection(readLines(checkin_file, n=10000)),verbose=T)
+# checkin=head(checkin_data, 50)
+# write.csv(checkin, 'checkin.csv')
+# write(checkin, "checkin.json")
+# 
+# tip_file <- ('yelp_academic_dataset_tip.json')
+# tip_data<-jsonlite::stream_in(textConnection(readLines(tip_file, n=10000)),verbose=T)
+# tip=head(tip_data, 50)
+# write.csv(tip, 'tip.csv')
+# write(tip, "tip.json")
+# 
+# user_file <- "yelp_academic_dataset_user.json"
+# user_data<-jsonlite::stream_in(textConnection(readLines(user_file, n=10000)),verbose=T)
+# user=head(user_data, 50)
+# write.csv(user, 'user.csv')
+# write(user, "user.json")
+# 
+# 
+# biz_file <- ('yelp_academic_dataset_business.json')
+# bizdata <- fromJSON(sprintf("[%s]", paste(readLines(biz_file),collapse=",")))
+# biz_data<-jsonlite::stream_in(textConnection(readLines(biz_file, n=10000)),verbose=F)
+# biz=head(biz_data, 50)
+# write.csv(biz, 'biz_file.csv')
+# write(bizdata, "biz.json")
 
-review_file <- fromJSON('yelp_academic_dataset_review.json', nullValue = NA)
-review_data<-jsonlite::stream_in(textConnection(readLines(review_file, n=10000)),verbose=T)
-review=head(review_data, 50)
-write.xlsx(review, 'review.xlsx')
 
-checkin_file <- fromJSON('yelp_academic_dataset_checkin.json', nullValue = NA)
-checkin_data<-jsonlite::stream_in(textConnection(readLines(checkin_file, n=10000)),verbose=T)
-checkin=head(checkin_data, 50)
-write.xlsx(checkin, 'checkin.xlsx')
+print_json_lines <- function(json, lines) {
+  # break up into lines
+  json_lines <- strsplit(json, "\n")[[1]]
+  # get desired lines
+  json_lines <- json_lines[lines]
+  # print
+  cat(paste(json_lines, collapse = "\n"))
+  # return invisily
+  invisible(json_lines)
+}
 
-tip_file <- fromJSON('yelp_academic_dataset_tip.json', nullValue = NA)
-tip_data<-jsonlite::stream_in(textConnection(readLines(tip_file, n=10000)),verbose=T)
-tip=head(tip_data, 50)
-write.xlsx(tip, 'tip.xlsx')
-
-user_file <- "yelp_academic_dataset_user.json"
-user_data<-jsonlite::stream_in(textConnection(readLines(user_file, n=10000)),verbose=T)
-user=head(user_data, 50)
-write.xlsx(user, 'user.xlsx')
-
-biz_file <- 'yelp_academic_dataset_business.json'
-biz_data<-jsonlite::stream_in(textConnection(readLines(biz_file, n=10000)),verbose=T)
-biz_sample=head(user, 50)
-write.xlsx(biz_sample, 'biz_file.xlsx')
-
-
+business=print_json_lines(jsonlite::toJSON(biz_data, pretty = TRUE), 1:500)
+write(business, "biz.json")
 
 
 # yelp_academic_dataset_business.json
@@ -41,6 +54,13 @@ write.xlsx(biz_sample, 'biz_file.xlsx')
 # yelp_academic_dataset_tip.json
 # yelp_academic_dataset_user.json
 
+
+
+review_file <- ('yelp_academic_dataset_review.json')
+review_data<-jsonlite::stream_in(textConnection(readLines(review_file, n=100000)),verbose=T)
+review=head(review_data, 50)
+write.csv(review, 'review.csv')
+write(review, "review.json")
 
 
 json_file <- lapply(data, function(x) {
