@@ -14,3 +14,7 @@ Rorr/yelp_dataset/Raw/yelp_academic_dataset_review.json
 Rorr/yelp_dataset/Raw/yelp_academic_dataset_tip.json
 Rorr/yelp_dataset/Raw/yelp_academic_dataset_user.json
 Rorr/yelp_dataset/Raw/Reviews.csv
+*.Rda
+Rorr/yelp_dataset/Raw/biz_vector
+Rorr/yelp_dataset/Raw/.Rhistory
+Rorr/yelp_dataset/Raw/biz_vector.csv
