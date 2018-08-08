@@ -7,9 +7,9 @@ library(data.table) # install if not installed already
 review_file <- ('yelp_academic_dataset_review.json')
 #  l <- readLines(c, -1L)
 df<-jsonlite::stream_in(textConnection(readLines(review_file, n=5996996)),verbose=T)
-
-data = df %>%
-  select(business_id,text) 
+names(df)
+attribute_data = df %>%
+  select(useful,funny,cool) 
 	# %>% split(.$business_id)
 rm(df)
 #biz_vector =as.vector(data$business_id)
@@ -9409,20 +9409,24 @@ biz_vector=as.list(biz_vector)
 biz_vector <- Map(as.data.frame, biz_vector)
 biz_vector <- rbindlist(biz_vector)
 
-df=do.call(cbind, list(biz_vector))
 #dots[[1L]][[1L]]
+
+setnames(biz_vector, "dots[[1L]][[1L]]", "business_id")
+setnames(polarity_alt, "dots[[1L]][[1L]]", "polarity_score")
+
 final_df=cbind(emotes,polarity_alt)
 final_df[, names(biz_vector) := as.list(biz_vector)]
 final_df=cbind(biz_vector,emotes,polarity_alt)
+rm(biz_vector,polarity_alt,emotes)
+
+final_df=cbind(final_df,attribute_data)
+setnames(final_df, "funny", "avg_funniness_review_rating")
+setnames(final_df, "cool", "avg_coolness_review_rating")
+setnames(final_df, "useful", "avg_usefulness_review_rating")
+
 names(final_df)
-final_df["Marks"].ColumnName = "SubjectMarks";
-
-if (any(duplicated(final_df))) 
-           stop("Some duplicates exist in 'old': ", paste(final_df[duplicated(final_df)],
-                collapse = ","))
-if (any(duplicated(names(final_df)))) 
-           stop("'old' is character but there are duplicate column names: ", 
-                paste(names(final_df)[duplicated(names(final_df))], collapse = ",")) 
-
-
 save(final_df, file = "big_data.rda")
+
+aggregate_df=aggregate(. ~business_id, data=final_df, mean, na.rm=TRUE)
+fwrite(aggregate_df, "average_business_scores.csv")
+
