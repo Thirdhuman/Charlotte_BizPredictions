@@ -562,6 +562,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fff;
   background-size: cover;
   padding: 60px 0 40px 0;
+  margin-bottom: 100px;
+
 }
 
 #project .box {
@@ -609,6 +611,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
   padding: 60px 0 0 0;
   position: relative;
+  margin-bottom: 100px;
+
 }
 
 #dataset::before {
