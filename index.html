@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Machine Learning Project</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1>
+        <a href="#intro"><img src="" alt="" title=""  style="height: 32px"/>Final Project</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+		  <li><a href="#project">Project</a></li>
+          <li><a href="#dataset">Dataset</a></li>
+          <li class="menu-has-children"><a href="#analysis">Analysis</a>
+            <ul>
+              <li><a href="#regression">MultiLinear Regression</a></li>
+              <li><a href="#neural">Decision Tree</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="img/home-bg.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+				<p>&nbsp;</p>
+                <h2>Predicting Yelp Ratings in Charlotte with ML</h2>
+                <!--p>Predictive Analytics Project for GWU Data Analytics Bootcamp program.</p-->
+				<p>&nbsp;</p>
+
+
+	
+			<div class="row">
+				<div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <h4 class="title"><b>TAMARA DANIELS</b></h4>
+			<p class="description"><a href=""><i class="fa fa-github"></i> tammielynne77</a></p>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+			<h4 class="title"><b>JULIO DIAZ</b></h4>            
+            <p class="description"><a href=""><i class="fa fa-github"></i> juliodiaz</a></p>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+			<h4 class="title"><b>JESUS MENDIOLA</b></h4>
+            <p class="description"><a href=""><i class="fa fa-github"></i> jmendiola84</a></p>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+			<h4 class="title"><b>ROBERT ORR</b></h4>            
+            <p class="description"><a href=""><i class="fa fa-github"></i> thirdhuman</a></p>
+          </div>
+		  </div>
+		  
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+
+    <!--==========================
+      Project Section
+    ============================-->
+    <section id="project">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Project</h3>
+          <p>Using Yelp dataset, we have built a Predictive Analytics application that help us to define which type of restaurants in Charlotte are more likely to get high ratings based in the correlation between the sentiment analysis of the users reviews and the number of starts in the current rating of each restaurant.</p>
+	   </header>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/R-icon.png" style="height: 32px"></i></div>
+            <h4 class="title">R</h4>
+            <p class="description">Sentiment analysis conducted on users reviews using Syuzhet library.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-icon.png" style="height: 32px"></i></div>
+		    <h4 class="title">Pandas</h4>
+            <p class="description">Datasets cleansing, filtering and merging to a single dataset for further analysis. </p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-icon.png" style="height: 32px"></i></div>
+		    <h4 class="title">SciKits</h4>
+            <p class="description">Logistic Regression analysis applied on dataset.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/keras-icon.jpg" style="height: 32px"></i></div>
+			<h4 class="title">Keras</h4>
+            <p class="description">Neural Networks analysis for our dataset.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/HTML5_icon.png" style="height: 32px"></i></div>
+			<h4 class="title">HTML</h4>
+            <p class="description">Project Website development.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/apple-touch-icon.png" style="height: 32px"></i></div>
+            <h4 class="title">Bootstrap</h4>
+            <p class="description">Project Website responsiveness and design.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #project -->
+
+
+    <!--==========================
+      Dataset Section
+    ============================-->
+    <section id="dataset"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Dataset</h3>
+          <!--p>Dataset obtained from Yelp.com, filtered and cleaned to get users reviews for restaurants located in Charlotte, NC.</p>
+		  <h4>Variables used for our analysis:</h4>
+			<ul> - Average Star Rating </ul> <ul> - Reactions (Useful, Funny, Cool) </ul-->
+        </header>	
+        <!--div class="row counters">
+
+
+          <div class="col-lg-4 col-6 text-center">
+            <span data-toggle="counter-up">4,210</span>
+            <p>Restaurants</p>
+  				</div>
+
+          <div class="col-lg-4 col-6 text-center">
+            <span data-toggle="counter-up">6,000,000</span>
+            <p>Yelp Reviews</p>
+  				</div>
+
+          <div class="col-lg-4 col-12 text-center">
+            <span data-toggle="counter-up">5</span>
+            <p>Years of Historical Data</p>
+  				</div>
+
+  			</div-->
+		<div class="row counters">
+
+          <div class="col-lg-6 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <h4 class="title"> <img src="img/yelp-icon.png" style="height: 32px"><b> Dataset used: Yelp Reviewer Dataset </b></h4>		
+            <p class="description"> Compiles information on 11 metropolitan areas: Edinburgh (UK), Stuttgart (Germany), Montreal (Canada), Toronto (Canada), Pittsburgh, <b>Charlotte</b>, Champaign-Urbana, Phoenix, Las Vegas, Madison, and Cleveland.</p>
+            <h4 class="title"> <img src="img/yelp-icon.png" style="height: 32px"> <b> NRC Emotion Lexicon</b></h4>
+            <p class="description"> List of words and their associations with eight emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive). </p>
+            <h4 class="title"> <img src="img/yelp-icon.png" style="height: 32px"> <b> Extra variables</b></h4>
+            <p class="description"> Yelp allows readers of reviews to tag reviews with 3 attributes: “cool”, “useful”, and “funny”
+These were included to gain additional context as to how the reviews were interpreted. </p>
+			<img src="img/yelp-buttons.png" style="height: 32px">
+		  </div>
+			<div class="dataset-img col-lg-6 col-6 text-center">
+				<img src="img/yelp-dataset.png" alt="" class="img-fluid">
+			    <span data-toggle="counter-up">6,000,000</span><p><b>Yelp Reviews Analyzed</b></p>
+  				</div>			
+      
+	  </div>
+    </section><!-- #dataset -->
+
+    <!--==========================
+      Regression Section
+    ============================--> 
+
+  <section id="regression">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>MultiLinear Regression</h3>
+          <p>Description about Regression Analysis process. Description about Regression Analysis process.Description about Regression Analysis process. Description about Regression Analysis process. Description about Regression Analysis process. Description about Regression Analysis process. </p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/regression-example.jpg" class="img-fluid"></i></div>
+            <!--h4 class="title"><a href="">R</a></h4>
+            <p class="description">Description about how we use R in our project.</p-->
+          </div>
+          <div class="col-lg-6 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/regression-example.jpg" class="img-fluid"></i></div>
+            <!--h4 class="title"><a href="">Pandas</a></h4>
+            <p class="description">Description about how we use R in our project.</p-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #regression -->
+
+ <section id="neural">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Decision Tree</h3>
+          <p>Description about Neural Networks process. Description about Neural Networks process.Description about Neural Networks process.Description about Neural Networks process.Description about Neural Networks process.Description about Neural Networks process.Description about Neural Networks process.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/neural-networks.png" class="img-fluid"></i></div>
+            <!--h4 class="title"><a href="">R</a></h4>
+            <p class="description">Description about how we use R in our project.</p-->
+          </div>
+          <div class="col-lg-6 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/neural-networks.png" class="img-fluid"></i></div>
+            <!--h4 class="title"><a href="">Pandas</a></h4>
+            <p class="description">Description about how we use R in our project.</p-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #neural -->	
+
+
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright" style="color:black">
+        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+      </div>
+      <div class="credits" style="color:black">
+        Designed by <a href="https://bootstrapmade.com/" style="color:black">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
