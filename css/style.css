@@ -668,7 +668,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 40px;
 }
 
-#regression .img-fluid {
+#regression .img-fluidsss {
 	display: block;
     margin-left: auto;
     margin-right: auto;
@@ -680,8 +680,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #neural .section-header {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
+
 
 /*--------------------------------------------------------------
 # Footer
