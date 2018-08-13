@@ -8,8 +8,8 @@ review_file <- ('yelp_academic_dataset_review.json')
 #  l <- readLines(c, -1L)
 df<-jsonlite::stream_in(textConnection(readLines(review_file, n=5996996)),verbose=T)
 names(df)
-attribute_data = df %>%
-  select(useful,funny,cool) 
+data = df %>%
+  select(business_id,text) 
 	# %>% split(.$business_id)
 rm(df)
 #biz_vector =as.vector(data$business_id)
@@ -17,10 +17,8 @@ rm(df)
 # rm(biz_vector)
 txt_vector =data$text
 rm(data)
-
 split_df = split(txt_vector, ceiling(seq_along(txt_vector)/5000))
 rm(txt_vector)
-load('pol_b1.rda')
 
 #### Split ####
 split_1=split_df[[1]]
@@ -9409,8 +9407,6 @@ biz_vector=as.list(biz_vector)
 biz_vector <- Map(as.data.frame, biz_vector)
 biz_vector <- rbindlist(biz_vector)
 
-#dots[[1L]][[1L]]
-
 setnames(biz_vector, "dots[[1L]][[1L]]", "business_id")
 setnames(polarity_alt, "dots[[1L]][[1L]]", "polarity_score")
 
@@ -9419,14 +9415,17 @@ final_df[, names(biz_vector) := as.list(biz_vector)]
 final_df=cbind(biz_vector,emotes,polarity_alt)
 rm(biz_vector,polarity_alt,emotes)
 
+attribute_data = df %>%  select(useful,funny,cool) 
+
 final_df=cbind(final_df,attribute_data)
 setnames(final_df, "funny", "avg_funniness_review_rating")
 setnames(final_df, "cool", "avg_coolness_review_rating")
 setnames(final_df, "useful", "avg_usefulness_review_rating")
 
 names(final_df)
-save(final_df, file = "big_data.rda")
+# save(final_df, file = "big_data.rda")
 
 aggregate_df=aggregate(. ~business_id, data=final_df, mean, na.rm=TRUE)
 fwrite(aggregate_df, "average_business_scores.csv")
 
+# Finished Data Wrangling
